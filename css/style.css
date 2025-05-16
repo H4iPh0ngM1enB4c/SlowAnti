@@ -960,7 +960,7 @@ body {
 /* Changelog Styles */
 .changelog-section {
     padding: 60px 20px;
-    background: var(--light-bg);
+    background: linear-gradient(135deg, #4a90e2, #2562a8);
 }
 
 .changelog-content {
@@ -968,80 +968,19 @@ body {
     margin: 0 auto;
 }
 
-.changelog-item {
+.changelog-card {
     background: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(74,144,226,0.13), 0 1.5px 6px rgba(0,0,0,0.07);
+    padding: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+    color: #23272a;
 }
-
-.changelog-item.latest {
-    border: 2px solid var(--primary-color);
-}
-
-.update-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.update-header h2 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-
-.version-tag {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.update-list {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.update-list li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.update-list i {
-    color: var(--primary-color);
-    margin-top: 4px;
-}
-
-.update-note {
-    background: rgba(74, 144, 226, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.update-note i {
-    color: var(--primary-color);
-    margin-right: 8px;
-}
-
-@media (max-width: 768px) {
-    .update-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .changelog-item {
-        padding: 20px;
-    }
+.changelog-card:hover {
+    transform: translateY(-7px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(74,144,226,0.18), 0 2px 8px rgba(0,0,0,0.10);
 }
 
 /* Team Page Styles */
@@ -1188,15 +1127,18 @@ body {
 
 .credit-member {
     background: #fff;
-    border-radius: 15px;
-    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(74,144,226,0.07);
+    border: 1.5px solid var(--primary-color, #4a90e2);
+    padding: 32px 28px 20px 28px;
+    margin-bottom: 32px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .credit-member:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 24px rgba(74,144,226,0.13);
 }
 
 .credit-member img {
@@ -1311,4 +1253,115 @@ body {
         width: 100px;
         height: 100px;
     }
-} 
+}
+
+/* Background overlay for all hero sections */
+.hero, .page-hero {
+    position: relative;
+    overflow: hidden;
+}
+.bg-shape {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.22;
+}
+.hero-content, .page-hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Card trắng dùng cho changelog và credits */
+.card-white {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.2s;
+    margin-bottom: 32px;
+}
+.card-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(74,144,226,0.13);
+}
+
+/* Áp dụng class card-white cho changelog-item và credit-member */
+.changelog-item {
+    /* chỉ giữ lại các style riêng biệt nếu có */
+}
+.credit-member {
+    /* chỉ giữ lại các style riêng biệt nếu có */
+}
+
+.changelog-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+.changelog-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(74,144,226,0.07);
+  margin-bottom: 32px;
+  padding: 32px 28px 20px 28px;
+  border: 1.5px solid var(--primary-color, #4a90e2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.changelog-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(74,144,226,0.13);
+}
+.changelog-title {
+  color: var(--primary-color, #3686d3);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.changelog-badge {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 14px;
+  font-size: 0.95rem;
+  margin-left: 10px;
+  font-weight: 600;
+}
+.changelog-list {
+  margin: 18px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.changelog-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+.changelog-list li i {
+  color: var(--primary-color, #4a90e2);
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+.changelog-note {
+  background: #eaf4fd;
+  color: #3686d3;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 18px;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+}
+.changelog-note i {
+  margin-right: 8px;
+}
+@media (max-width: 600px) {
+  .changelog-container { padding: 0 8px; }
+  .changelog-card { padding: 18px 8px 12px 8px; }
+}  

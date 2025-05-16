@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlowAC - Changelog</title>
+    <title>Changelog - SlowAC</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -38,63 +38,51 @@
     </header>
 
     <!-- Main Content -->
-    <main>
-        <!-- Changelog Hero -->
-        <section class="page-hero">
-            <div class="hero-content animate__animated animate__fadeIn">
-                <h1 class="animate__animated animate__fadeInDown">Changelog</h1>
-                <p class="animate__animated animate__fadeInUp">Cập nhật và thay đổi mới nhất của SlowAC</p>
+    <section class="page-hero">
+        <img src="images/background.png" class="bg-shape" alt="background">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1 class="animate__animated animate__fadeInDown">Changelog</h1>
+            <p class="animate__animated animate__fadeInUp">Cập nhật và thay đổi mới nhất của SlowAC</p>
+        </div>
+    </section>
+    <div class="changelog-container">
+        <div class="changelog-card">
+            <div>
+                <span class="changelog-title">Update 1:14 Am 15/5/2025 SlowAC</span>
+                <span class="changelog-badge">Latest</span>
             </div>
-        </section>
-
-        <!-- Changelog Section -->
-        <section class="changelog-section">
-            <div class="container">
-                <div class="changelog-content animate__animated animate__fadeInUp">
-                    <div class="changelog-item latest">
-                        <div class="update-header">
-                            <h2>Update 1:14 Am 15/5/2025 SlowAC</h2>
-                            <span class="version-tag">Latest</span>
-                        </div>
-                        <div class="update-content">
-                            <ul class="update-list">
-                                <li><i class="fas fa-plus"></i> Supported Folia ( beta ) vì chưa thử nghiệm và khi chạy nó hoạt động đủ các checks nên not recommended sử dụng folia=3</li>
-                                <li><i class="fas fa-plus"></i> Remake anti Nofalldame</li>
-                                <li><i class="fas fa-plus"></i> Remake anti Noslow</li>
-                                <li><i class="fas fa-plus"></i> Remake anti Blink</li>
-                                <li><i class="fas fa-plus"></i> Remake anti killaura)</li>
-                                <li><i class="fas fa-wrench"></i> New command /slc check</li>
-                            </ul>
-                            <div class="update-note">
-                                <p><i class="fas fa-info-circle"></i> Plugins sẽ đi kèm với GrimAC. Sẽ có config cho mọi người mua sản phẩm</p>
-                            </div>
-                        </div>
-                    <!-- Latest Update -->
-                    <div class="changelog-item latest">
-                        <div class="update-header">
-                            <h2>Update 3:07 AM 10/5/2025</h2>
-                            <span class="version-tag">Latest</span>
-                        </div>
-                        <div class="update-content">
-                            <ul class="update-list">
-                                <li><i class="fas fa-plus"></i> New Packet Event = Matrix</li>
-                                <li><i class="fas fa-plus"></i> New Core Packet make by: S1ppy</li>
-                                <li><i class="fas fa-plus"></i> New Check Blinks (Beta)</li>
-                                <li><i class="fas fa-plus"></i> New Check Killaura (Beta)</li>
-                                <li><i class="fas fa-plus"></i> New Check Speed (Beta)</li>
-                                <li><i class="fas fa-wrench"></i> Fix thunder client killaura</li>
-                            </ul>
-                            <div class="update-note">
-                                <p><i class="fas fa-info-circle"></i> Plugins sẽ đi kèm với GrimAC. Sẽ có config cho mọi người mua sản phẩm</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+            <ul class="changelog-list">
+                <li><i class="fas fa-plus"></i> Supported Folia (beta) (chưa thử nghiệm, không recommended dùng folia=3)</li>
+                <li><i class="fas fa-plus"></i> Remake anti Nofalldame</li>
+                <li><i class="fas fa-plus"></i> Remake anti Noslow</li>
+                <li><i class="fas fa-plus"></i> Remake anti Blink</li>
+                <li><i class="fas fa-plus"></i> Remake anti killaura</li>
+                <li><i class="fas fa-plus"></i> New command /slc check</li>
+            </ul>
+            <div class="changelog-note">
+                <i class="fas fa-info-circle"></i>
+                Plugins sẽ đi kèm với GrimAC. Sẽ có config cho mọi người mua sản phẩm
             </div>
-        </section>
-    </main>
-
+        </div>
+        <div class="changelog-card">
+            <div>
+                <span class="changelog-title">Update 3:07 AM 10/5/2025</span>
+                <span class="changelog-badge">Old</span>
+            </div>
+            <ul class="changelog-list">
+                <li><i class="fas fa-plus"></i> New Packet Event = Matrix</li>
+                <li><i class="fas fa-plus"></i> New Core Packet make by: S1ppy@OnlyFans</li>
+                <li><i class="fas fa-plus"></i> New Check Blinks (Beta)</li>
+                <li><i class="fas fa-plus"></i> New Check Killaura (Beta)</li>
+                <li><i class="fas fa-plus"></i> New Check Speed (Beta)</li>
+                <li><i class="fas fa-wrench"></i> fix thunder killaura</li>
+            </ul>
+            <div class="changelog-note">
+                <i class="fas fa-info-circle"></i>
+                Plugins sẽ đi kèm với GrimAC. Sẽ có config cho mọi người mua sản phẩm
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -123,7 +111,6 @@
             <p>&copy; 2025 SlowAC. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="js/main.js"></script>
 </body>
 </html> 
