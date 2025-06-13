@@ -1,11 +1,14 @@
 /* Biên dịch từ scss/style.scss */
 :root {
-  --primary-color: #4a90e2;
-  --secondary-color: #2c3e50;
-  --accent-color: #e74c3c;
+  --primary-color: #0984e3; /* Bright blue */
+  --secondary-color: #2d3436; /* Dark charcoal for contrast */
+  --accent-color: #00b894; /* Teal/greenish blue for gradient start */
   --text-color: #333;
-  --light-bg: #f5f6fa;
+  --light-bg: #f2f7fa; /* Màu trắng xanh nhạt tinh tế */
   --white: #ffffff;
+  --primary-color-rgb: 9, 132, 227; /* RGB values for --primary-color */
+  --light-bg-rgb: 242, 247, 250; /* RGB values for --light-bg */
+  --main-gradient: linear-gradient(135deg, var(--accent-color), var(--primary-color));
 }
 
 * {
@@ -17,6 +20,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+  background: var(--light-bg); /* Đặt màu nền body */
   overflow-x: hidden;
 }
 .section-title {
@@ -34,7 +38,7 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #4a90e2, #2562a8);
+  background: var(--main-gradient);
   border-radius: 2px;
 }
 .btn {
@@ -47,7 +51,7 @@ body {
   font-size: 0.95rem;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #4a90e2, #2562a8);
+  background: var(--main-gradient);
   color: #fff;
 }
 .btn-primary:hover {
@@ -61,14 +65,15 @@ body {
 }
 .btn-secondary:hover {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--secondary-color);
 }
 .btn-discord {
-  background: #7289da;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
 }
 .btn-discord:hover {
-  background: #5b6eae;
+  background: #076CBF; /* Một sắc thái xanh đậm hơn của primary-color */
+  color: var(--light-bg); /* Màu chữ trắng xanh nhạt khi hover */
 }
 .pulse {
   animation: pulse 2s infinite;
@@ -83,7 +88,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
+  background: rgba(var(--light-bg-rgb), 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -129,7 +134,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #4a90e2, #2562a8);
+  background: var(--main-gradient);
   transition: width 0.3s ease;
 }
 .nav-link:hover {
@@ -143,7 +148,7 @@ body {
 }
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #2562a8);
+  background: var(--main-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,16 +198,18 @@ body {
   margin: 0 auto;
 }
 .feature-card {
-  background: #fff;
+  background: var(--light-bg);
   padding: 25px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+  box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+  border-color: var(--primary-color);
 }
 .feature-card i {
   font-size: 2rem;
@@ -227,16 +234,18 @@ body {
   margin: 0 auto;
 }
 .pricing-card {
-  background: #fff;
+  background: var(--light-bg);
   padding: 30px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+  box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .pricing-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+  border-color: var(--primary-color);
 }
 .pricing-card .pricing-header {
   margin-bottom: 30px;
@@ -284,7 +293,7 @@ body {
   margin-right: 10px;
 }
 .discord {
-  background: linear-gradient(135deg, #4a90e2, #2562a8);
+  background: var(--main-gradient);
   padding: 60px 20px;
   text-align: center;
   color: #fff;
@@ -326,17 +335,19 @@ body {
   margin: 0 auto;
 }
 .support-card {
-  background: #fff;
+  background: var(--light-bg);
   padding: 30px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+  box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   min-width: 250px;
 }
 .support-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+  border-color: var(--primary-color);
 }
 .support-card i {
   font-size: 2.5rem;
@@ -404,7 +415,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: var(--light-bg);
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     flex-direction: column;
@@ -443,7 +454,7 @@ body {
 .page-hero {
     height: 40vh;
     min-height: 300px;
-    background: linear-gradient(135deg, #4a90e2, #2562a8);
+    background: var(--main-gradient);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -493,7 +504,7 @@ body {
 
 .advanced-features {
     padding: 60px 20px;
-    background: #fff;
+    background: var(--light-bg);
 }
 
 .advanced-features-grid {
@@ -508,11 +519,15 @@ body {
     padding: 30px;
     border-radius: 10px;
     background: var(--light-bg);
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .advanced-feature:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
 .advanced-feature h4 {
@@ -558,9 +573,9 @@ body {
     max-width: 800px;
     margin: 40px auto 0;
     padding: 40px;
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
 }
 
 .payment-steps {
@@ -595,10 +610,10 @@ body {
 .discord-invite {
     text-align: center;
     padding: 40px;
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 10px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
 }
 
 .discord-invite i {
@@ -620,16 +635,19 @@ body {
 }
 
 .benefit-card {
-    background: #fff;
+    background: var(--light-bg);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .benefit-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
 .benefit-card i {
@@ -646,10 +664,18 @@ body {
 }
 
 .channel {
-    background: #fff;
+    background: var(--light-bg);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.channel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
 .channel i {
@@ -687,12 +713,13 @@ body {
 }
 
 .support-card {
-    background: #fff;
+    background: var(--light-bg);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-decoration: none;
     color: var(--text-color);
     min-width: 250px;
@@ -700,6 +727,8 @@ body {
 
 .support-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
 .support-card i {
@@ -714,9 +743,9 @@ body {
 }
 
 .faq-list {
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
     overflow: hidden;
 }
 
@@ -748,12 +777,20 @@ body {
 }
 
 .step-card {
-    background: #fff;
+    background: var(--light-bg);
     padding: 25px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
 .step-number {
@@ -904,7 +941,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #5865F2;
+    background: var(--primary-color);
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -914,13 +951,13 @@ body {
     transition: all 0.3s ease;
     width: fit-content;
     margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(88, 101, 242, 0.2);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .discord-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(88, 101, 242, 0.3);
-    background: #4752c4;
+    box-shadow: 0 6px 12px rgba(var(--primary-color-rgb), 0.3);
+    background: #076CBF; /* Màu xanh đậm hơn cho hiệu ứng hover */
 }
 
 .discord-button .discord-icon {
@@ -939,7 +976,7 @@ body {
 }
 
 .discord-invite .section-title {
-    color: #23272A;
+    color: var(--secondary-color);
     font-size: 1.5rem;
     margin-bottom: 25px;
 }
@@ -960,7 +997,7 @@ body {
 /* Changelog Styles */
 .changelog-section {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #4a90e2, #2562a8);
+    background: var(--main-gradient);
 }
 
 .changelog-content {
@@ -969,18 +1006,17 @@ body {
 }
 
 .changelog-card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(74,144,226,0.13), 0 1.5px 6px rgba(0,0,0,0.07);
-    padding: 32px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.07);
     margin-bottom: 32px;
-    text-align: left;
-    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
-    color: #23272a;
+    padding: 32px 28px 20px 28px;
+    border: 1.5px solid var(--primary-color);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 .changelog-card:hover {
-    transform: translateY(-7px) scale(1.01);
-    box-shadow: 0 12px 32px rgba(74,144,226,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 24px rgba(var(--primary-color-rgb), 0.13);
 }
 
 /* Team Page Styles */
@@ -998,10 +1034,10 @@ body {
 }
 
 .team-member {
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -1012,7 +1048,7 @@ body {
 .member-avatar {
     position: relative;
     padding-top: 100%;
-    background: linear-gradient(135deg, #4a90e2, #2562a8);
+    background: var(--main-gradient);
 }
 
 .member-avatar img {
@@ -1045,13 +1081,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #7289da;
+    color: var(--primary-color);
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .member-social a:hover {
-    background: #7289da;
+    background: var(--primary-color);
     color: #fff;
     transform: translateY(-3px);
 }
@@ -1126,10 +1162,10 @@ body {
 }
 
 .credit-member {
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(74,144,226,0.07);
-    border: 1.5px solid var(--primary-color, #4a90e2);
+    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.07);
+    border: 1.5px solid var(--primary-color);
     padding: 32px 28px 20px 28px;
     margin-bottom: 32px;
     text-align: center;
@@ -1138,7 +1174,7 @@ body {
 
 .credit-member:hover {
     transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 8px 24px rgba(74,144,226,0.13);
+    box-shadow: 0 8px 24px rgba(var(--primary-color-rgb), 0.13);
 }
 
 .credit-member img {
@@ -1183,7 +1219,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #4a90e2, #2562a8);
+    background: var(--main-gradient);
     padding: 20px;
 }
 
@@ -1207,7 +1243,7 @@ body {
     margin: 0;
     line-height: 1;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    background: linear-gradient(to right, #fff, #e0e0e0);
+    background: linear-gradient(to right, var(--white), var(--light-bg));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1277,9 +1313,9 @@ body {
 
 /* Card trắng dùng cho changelog và credits */
 .card-white {
-    background: #fff;
+    background: var(--light-bg);
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.1);
     padding: 30px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.2s;
@@ -1287,7 +1323,7 @@ body {
 }
 .card-white:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(74,144,226,0.13);
+    box-shadow: 0 8px 24px rgba(var(--primary-color-rgb), 0.13);
 }
 
 /* Áp dụng class card-white cho changelog-item và credit-member */
@@ -1304,26 +1340,26 @@ body {
   padding: 0 16px;
 }
 .changelog-card {
-  background: #fff;
+  background: var(--light-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(74,144,226,0.07);
+  box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.07);
   margin-bottom: 32px;
   padding: 32px 28px 20px 28px;
-  border: 1.5px solid var(--primary-color, #4a90e2);
+  border: 1.5px solid var(--primary-color);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .changelog-card:hover {
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 8px 24px rgba(74,144,226,0.13);
+  box-shadow: 0 8px 24px rgba(var(--primary-color-rgb), 0.13);
 }
 .changelog-title {
-  color: var(--primary-color, #3686d3);
+  color: var(--primary-color);
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 .changelog-badge {
-  background: var(--primary-color, #4a90e2);
+  background: var(--primary-color);
   color: #fff;
   border-radius: 12px;
   padding: 2px 14px;
@@ -1344,13 +1380,13 @@ body {
   align-items: center;
 }
 .changelog-list li i {
-  color: var(--primary-color, #4a90e2);
+  color: var(--primary-color);
   margin-right: 10px;
   font-size: 1.1rem;
 }
 .changelog-note {
   background: #eaf4fd;
-  color: #3686d3;
+  color: var(--primary-color);
   border-radius: 8px;
   padding: 10px 16px;
   margin-top: 18px;
@@ -1364,4 +1400,41 @@ body {
 @media (max-width: 600px) {
   .changelog-container { padding: 0 8px; }
   .changelog-card { padding: 18px 8px 12px 8px; }
+}
+
+/* General Form Element Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2); /* Viền xanh nhạt */
+  border-radius: 8px;
+  background: var(--light-bg); /* Nền trắng xanh nhạt */
+  box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.1); /* Đổ bóng xanh nhẹ nhàng */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Viền đậm hơn khi focus */
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2); /* Đổ bóng mạnh hơn khi focus */
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
+  box-shadow: 0 2px 10px rgba(var(--primary-color-rgb), 0.15); /* Đổ bóng nhẹ nhàng khi hover */
 }  
